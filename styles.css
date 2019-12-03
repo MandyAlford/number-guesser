@@ -88,7 +88,8 @@ main {
   width: 33.3%;
 }
 
-.set-range-inputs div button{
+.set-range-inputs div button,
+.submit-guess form button {
   background-color: #d0d2d3;
   border: 0;
   border-radius: 15px;
@@ -97,6 +98,9 @@ main {
   font-size: .9em;
   font-weight: 700;
   height: 1.8em;
+}
+
+.set-range-inputs div button {
   margin-left: 40%;
   margin-top: 13%;
   width: 60%;
@@ -108,5 +112,54 @@ main {
 }
 
 .submit-guess {
+  border: 1px solid #d0d2d3;
+}
+
+.submit-guess * {
   height: 45%;
+  margin-left: 2%;
+}
+
+.submit-guess form span {
+  color: #404041;
+  font-weight: 700;
+  margin-left: 0;
+  text-decoration: underline;
+}
+
+.submit-guess h3 {
+  margin-bottom: -3%;
+}
+
+.submit-guess-inputs-challenger-1,
+.submit-guess-inputs-challenger-2 {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 22%;
+}
+
+.submit-guess form h3 {
+  margin-top: 5%;
+}
+
+.submit-guess div {
+  display: flex;
+  flex-direction: column;
+  margin-left: -2%;
+  width: 55%;
+}
+
+.submit-guess div:nth-child(2) {
+  width: 40%;
+}
+
+.submit-guess input {
+  height: 3em;
+}
+
+.submit-guess form button {
+  display: inline-block;
+  margin-bottom: 2.5%;
+  margin-top: 5%;
+  width: 30%;
 }
