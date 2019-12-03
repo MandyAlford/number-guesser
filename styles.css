@@ -46,6 +46,15 @@ h2 {
   font-weight: 300;
 }
 
+hr, h2 {
+  display: inline-flex;
+}
+
+hr {
+  width: 5%;
+  margin-bottom: .5%;
+}
+
 /* INITIAL DISPLAY */
 
 .left-section,
