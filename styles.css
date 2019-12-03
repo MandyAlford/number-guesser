@@ -42,3 +42,22 @@ main {
   height: 82vh;
   width: 50%;
 }
+
+.left-section {
+  background: #F7F7F7;
+  color: #808185;
+}
+
+.left-section section {
+  background: #FFF;
+  border: 2px solid green;
+  margin: 2%;
+}
+
+.set-range {
+  height: 15%;
+}
+
+.submit-guess {
+  height: 45%;
+}
