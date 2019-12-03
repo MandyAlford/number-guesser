@@ -6,6 +6,14 @@
   margin: 0;
 }
 
+main{
+  font-size: 1.4em;
+}
+
+main h3{
+  color: #404041;
+}
+
 /* HEADER AREA */
 header {
   background: #404041;
@@ -51,11 +59,52 @@ main {
 .left-section section {
   background: #FFF;
   border: 2px solid green;
-  margin: 2%;
+  margin: 3%;
 }
 
 .set-range {
-  height: 15%;
+  height: 20%;
+}
+
+.set-range h3 {
+  padding-left: 3%;
+  margin-bottom: 0;
+}
+
+.set-range form h3 {
+  margin-bottom: -04%;
+}
+
+.set-range-inputs{
+  display:flex;
+  justify-content: space-between;
+  padding-top: -20%;
+}
+
+.set-range-inputs div{
+  border: 2px solid green;
+  display: flex;
+  flex-direction: column;
+  width: 33.3%;
+}
+
+.set-range-inputs div button{
+  background-color: #d0d2d3;
+  border: 0;
+  border-radius: 15px;
+  color: #FFFFFF;
+  font-family: "Open Sans", sans-serif;
+  font-size: .9em;
+  font-weight: 700;
+  height: 1.8em;
+  margin-left: 40%;
+  margin-top: 13%;
+  width: 60%;
+}
+
+.set-range-inputs input{
+  height: 3em;
+  width:95%;
 }
 
 .submit-guess {
