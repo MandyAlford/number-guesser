@@ -163,3 +163,35 @@ main {
   margin-top: 5%;
   width: 30%;
 }
+
+.latest-guess h3{
+  display: block;
+  margin-bottom: -6%;
+  padding-left: 3%;
+  width: 100%;
+}
+
+.latest-guess-container{
+  display: flex;
+  justify-content: space-between;
+}
+
+.latest-guess-container div{
+  margin-bottom: 3%;
+  margin-top: 3%;
+  padding: 3%;
+  padding-top: 0;
+  text-align: center;
+  width: 50%;
+}
+
+.pink-guess {
+  color: #dd1972;
+  font-size: 3em;
+  font-weight: 700;
+  text-align: center;
+}
+
+.challenger-2-container{
+  border-left: 3px solid #D1D2D4;
+}
