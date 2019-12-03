@@ -119,6 +119,7 @@ main {
 .submit-guess form span {
   color: #404041;
   font-weight: 700;
+  margin-left: 0;
   text-decoration: underline;
 }
 
