@@ -7,7 +7,9 @@
 }
 
 main{
+  display: flex;
   font-size: 1.4em;
+  height: 930px;
 }
 
 main h3{
@@ -40,13 +42,8 @@ h2 {
 
 /* INITIAL DISPLAY */
 
-main {
-  display: flex;
-}
-
 .left-section,
 .right-section {
-  height: 82vh;
   width: 50%;
 }
 
@@ -61,7 +58,7 @@ main {
 }
 
 .set-range {
-  height: 20%;
+  height: 12%;
 }
 
 .set-range h3 {
@@ -159,6 +156,11 @@ main {
   margin-bottom: 2.5%;
   margin-top: 5%;
   width: 30%;
+}
+
+.latest-guess{
+  border: solid 2px red;
+  margin-bottom: 600px;
 }
 
 .latest-guess h3{
