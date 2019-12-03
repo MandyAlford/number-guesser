@@ -1,0 +1,63 @@
+/* GENERAL STYLING */
+
+* {
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+}
+
+/* HEADER AREA */
+header {
+  background: #404041;
+  height: 18vh;
+  text-align: center;
+}
+
+h1 {
+  color: #DD1972;
+  font-weight: 700;
+  font-size: 3.5em;
+  padding-top: 1%;
+}
+
+h1 span {
+  font-weight: 300;
+}
+
+h2 {
+  color: #F7F7F7;
+  font-size: 1.25em;
+  font-weight: 300;
+}
+
+/* INITIAL DISPLAY */
+
+main {
+  display: flex;
+}
+
+.left-section,
+.right-section {
+  border: 2px solid red;
+  height: 82vh;
+  width: 50%;
+}
+
+.left-section {
+  background: #F7F7F7;
+  color: #808185;
+}
+
+.left-section section {
+  background: #FFF;
+  border: 2px solid green;
+  margin: 2%;
+}
+
+.set-range {
+  height: 15%;
+}
+
+.submit-guess {
+  height: 45%;
+}

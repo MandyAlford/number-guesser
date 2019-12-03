@@ -3,15 +3,17 @@
   <head>
     <meta charset="utf-8">
     <title>Number Guesser</title>
+    <link href="styles.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,700&display=swap" rel="stylesheet">
   </head>
   <body>
   <header>
-    <h1><span>NUMBER</span>GUESSER</h1>
+    <h1>NUMBER<span>GUESSER</span></h1>
     <h2>ULTIMATE CHALLENGER EDITION</h2>
   </header>
     <main>
-      <section>
-        <section>
+      <section class="left-section">
+        <section class="set-range">
           <form>
             <h3>Set Range</h3>
             <label>Min Range</label>
@@ -21,7 +23,7 @@
             <button type="button">UPDATE</button>
           </form>
         </section>
-        <section>
+        <section class="submit-guess">
           <form>
             <p>The Current Range is <span>1</span> to <span>100</span></p>
             <h3>Challenger 1</h3>
@@ -39,7 +41,7 @@
             <button type="button">CLEAR FORM</button>
           </form>
         </section>
-        <section>
+        <section class="latest-guess">
           <div>
             <h3>Latest Guess</h3>
             <p>Challenger 1 Name</p>
@@ -49,12 +51,14 @@
           </div>
           <div>
             <h3>Latest Guess</h3>
-            <p>Challenger 2 Name</p>         
+            <p>Challenger 2 Name</p>
             <p>current guess</p>
             <p></p>
             <p>no guesses yet!</p>
           </div>
         </section>
+      </section>
+      <section class="right-section">
       </section>
     </main>
   </body>
