@@ -212,3 +212,8 @@ hr {
 .challenger-2-container{
   border-left: 3px solid #D1D2D4;
 }
+
+.right-section {
+  background-color: #d0d2d3;
+  border-left: solid 1px #404041;
+}
