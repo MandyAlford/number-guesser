@@ -184,6 +184,10 @@ h2 {
   width: 50%;
 }
 
+.challenger-name {
+  font-weight: 700;
+}
+
 .pink-guess {
   color: #dd1972;
   font-size: 3em;
