@@ -16,6 +16,12 @@ main h3{
   color: #404041;
 }
 
+.set-range,
+.submit-guess,
+.latest-guess {
+  border: 1px solid #d0d2d3;
+}
+
 /* HEADER AREA */
 header {
   background: #404041;
@@ -105,9 +111,9 @@ h2 {
   width:95%;
 }
 
-.submit-guess {
+/* .submit-guess {
   border: 1px solid #d0d2d3;
-}
+} */
 
 .submit-guess * {
   height: 45%;
@@ -159,7 +165,6 @@ h2 {
 }
 
 .latest-guess{
-  border: solid 2px red;
   margin-bottom: 600px;
 }
 
