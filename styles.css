@@ -203,7 +203,7 @@ hr {
 }
 
 .pink-guess {
-  color: #dd1972;
+  color: white;
   font-size: 3em;
   font-weight: 700;
   text-align: center;
@@ -216,4 +216,10 @@ hr {
 .right-section {
   background-color: #d0d2d3;
   border-left: solid 1px #404041;
+}
+
+/* HIDDEN DISPLAY */
+
+.pink{
+  color: #DD1972;
 }
