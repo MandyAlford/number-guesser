@@ -21,10 +21,9 @@ function checkGuessInputs(){
 
 function enableClearBtn() {
   if (challenger1Name.value || challenger1Guess.value || challenger2Name.value || challenger2Guess.value){
-    submitBtn.disabled === false;
-    console.log('clearn btn enabled');
+    clearFormBtn.disabled === false;
   } else {
-    submitBtn.disabled=== true;
+    clearFormBtn.disabled=== true;
     console.log('clearn btn disabled');
   }
 }
