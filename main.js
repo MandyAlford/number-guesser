@@ -11,14 +11,13 @@ var resetGameBtn = document.querySelector('#reset-game-btn');
 submitGuessForm.addEventListener('input', checkGuessInputs);
 submitGuessForm.addEventListener('input', enableClearBtn);
 clearFormBtn.addEventListener('click', clearFormInputs);
-submitBtn.addEventListener('click', populateLatestGuess);
 
 
 function checkGuessInputs(){
 
   if (challenger1Name.value && challenger1Guess.value && challenger2Name.value && challenger2Guess.value){
     submitBtn.disabled === false;
-
+    submitBtn.addEventListener('click', populateLatestGuess);
   } else {
     submitBtn.disabled=== true;
   }
@@ -38,8 +37,6 @@ function clearFormInputs() {
 }
 
 
-// All four inputs must have content. We're listening for a click on the submit button. When btn is clicked, the challenger names and guesses will be shown in the latest guess section and the pink class will be added to the guess number.
-
 function populateLatestGuess(){
   var challenger1NameSlot= document.querySelector('#challenger-1-name-slot');
   var challenger2NameSlot= document.querySelector('#challenger-2-name-slot');
@@ -53,13 +50,10 @@ function populateLatestGuess(){
 
   clearFormInputs();
   disableAllSubmitGuessBtns();
-
 }
 
 function disableAllSubmitGuessBtns() {
   submitBtn.disabled = true;
   clearFormBtn.disabled = true;
   resetGameBtn.disabled = true;
-
-  console.log('all btns disabled');
 }
