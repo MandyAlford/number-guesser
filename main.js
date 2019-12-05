@@ -6,6 +6,7 @@ var challenger1Name = document.querySelector('#challenger-1-name-input');
 var challenger1Guess = document.querySelector('#challenger-1-guess-input');
 var challenger2Name = document.querySelector('#challenger-2-name-input');
 var challenger2Guess = document.querySelector('#challenger-2-guess-input');
+var resetGameBtn = document.querySelector('#reset-game-btn');
 
 submitGuessForm.addEventListener('input', checkGuessInputs);
 submitGuessForm.addEventListener('input', enableClearBtn);
@@ -17,20 +18,18 @@ function checkGuessInputs(){
 
   if (challenger1Name.value && challenger1Guess.value && challenger2Name.value && challenger2Guess.value){
     submitBtn.disabled === false;
-    console.log('submit-btn-not-disabled');
+
   } else {
     submitBtn.disabled=== true;
-    console.log('submit-btn-not-disabled');
   }
 }
 
 function enableClearBtn() {
   if (challenger1Name.value || challenger1Guess.value || challenger2Name.value || challenger2Guess.value){
     clearFormBtn.disabled === false;
-    console.log('clear-btn-not-disabled');
+
   } else {
     clearFormBtn.disabled=== true;
-    console.log('clear-btn-not-disabled');
   }
 }
 
@@ -53,5 +52,14 @@ function populateLatestGuess(){
   challenger2GuessSlot.innerText= challenger2Guess.value;
 
   clearFormInputs();
+  disableAllSubmitGuessBtns();
 
+}
+
+function disableAllSubmitGuessBtns() {
+  submitBtn.disabled = true;
+  clearFormBtn.disabled = true;
+  resetGameBtn.disabled = true;
+
+  console.log('all btns disabled');
 }
