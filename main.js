@@ -6,16 +6,19 @@ var challenger1Name = document.querySelector('#challenger-1-name-input');
 var challenger1Guess = document.querySelector('#challenger-1-guess-input');
 var challenger2Name = document.querySelector('#challenger-2-name-input');
 var challenger2Guess = document.querySelector('#challenger-2-guess-input');
+var resetGameBtn = document.querySelector('#reset-game-btn');
 
 submitGuessForm.addEventListener('input', checkGuessInputs);
 submitGuessForm.addEventListener('input', enableClearBtn);
 clearFormBtn.addEventListener('click', clearFormInputs);
 submitBtn.addEventListener('click', populateLatestGuess);
 
+
 function checkGuessInputs(){
 
   if (challenger1Name.value && challenger1Guess.value && challenger2Name.value && challenger2Guess.value){
     submitBtn.disabled === false;
+
   } else {
     submitBtn.disabled=== true;
   }
@@ -24,6 +27,7 @@ function checkGuessInputs(){
 function enableClearBtn() {
   if (challenger1Name.value || challenger1Guess.value || challenger2Name.value || challenger2Guess.value){
     clearFormBtn.disabled === false;
+
   } else {
     clearFormBtn.disabled=== true;
   }
@@ -46,4 +50,16 @@ function populateLatestGuess(){
   challenger2NameSlot.innerText= challenger2Name.value;
   challenger1GuessSlot.innerText= challenger1Guess.value;
   challenger2GuessSlot.innerText= challenger2Guess.value;
+
+  clearFormInputs();
+  disableAllSubmitGuessBtns();
+
+}
+
+function disableAllSubmitGuessBtns() {
+  submitBtn.disabled = true;
+  clearFormBtn.disabled = true;
+  resetGameBtn.disabled = true;
+
+  console.log('all btns disabled');
 }
