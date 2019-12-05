@@ -8,7 +8,8 @@ var challenger2Name = document.querySelector('#challenger-2-name-input');
 var challenger2Guess = document.querySelector('#challenger-2-guess-input');
 
 submitGuessForm.addEventListener('input', checkGuessInputs);
-submitGuessForm.addEventListener('input', enableClearBtn)
+submitGuessForm.addEventListener('input', enableClearBtn);
+clearFormBtn.addEventListener('click', clearInputs)
 
 function checkGuessInputs(){
 
@@ -27,3 +28,14 @@ function enableClearBtn() {
     console.log('clearn btn disabled');
   }
 }
+
+function clearInputs() {
+  
+}
+
+
+
+// Listening for a click on clear form button
+// call a function that resets inputs -- clears them document
+// Add class to the inputs
+// use a querySelectorAll to iterate through all them setting them to an empty string
