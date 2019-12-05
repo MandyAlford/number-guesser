@@ -12,20 +12,25 @@ submitGuessForm.addEventListener('input', enableClearBtn);
 clearFormBtn.addEventListener('click', clearFormInputs);
 submitBtn.addEventListener('click', populateLatestGuess);
 
+
 function checkGuessInputs(){
 
   if (challenger1Name.value && challenger1Guess.value && challenger2Name.value && challenger2Guess.value){
     submitBtn.disabled === false;
+    console.log('submit-btn-not-disabled');
   } else {
     submitBtn.disabled=== true;
+    console.log('submit-btn-not-disabled');
   }
 }
 
 function enableClearBtn() {
   if (challenger1Name.value || challenger1Guess.value || challenger2Name.value || challenger2Guess.value){
     clearFormBtn.disabled === false;
+    console.log('clear-btn-not-disabled');
   } else {
     clearFormBtn.disabled=== true;
+    console.log('clear-btn-not-disabled');
   }
 }
 
@@ -46,4 +51,7 @@ function populateLatestGuess(){
   challenger2NameSlot.innerText= challenger2Name.value;
   challenger1GuessSlot.innerText= challenger1Guess.value;
   challenger2GuessSlot.innerText= challenger2Guess.value;
+
+  clearFormInputs();
+
 }
