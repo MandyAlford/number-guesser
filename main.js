@@ -7,6 +7,10 @@ var challenger1Guess = document.querySelector('#challenger-1-guess-input');
 var challenger2Name = document.querySelector('#challenger-2-name-input');
 var challenger2Guess = document.querySelector('#challenger-2-guess-input');
 var resetGameBtn = document.querySelector('#reset-game-btn');
+var minRangeInput = document.querySelector('#min-range-input');
+var maxRangeInput = document.querySelector('#max-range-input');
+var minRangeValue = document.querySelector('#min-range-value');
+var maxRangeValue = document.querySelector('#max-range-value');
 
 submitGuessForm.addEventListener('input', checkGuessInputs);
 submitGuessForm.addEventListener('input', enableClearBtn);
@@ -88,3 +92,5 @@ function guessChecker(){
     challenger2Feedback.innerText= "BOOM!";
   }
 }
+
+//take a user's value from min/max range input, and put it in the sentence at the top of the guess FORM
