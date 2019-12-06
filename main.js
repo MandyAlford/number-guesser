@@ -11,10 +11,12 @@ var minRangeInput = document.querySelector('#min-range-input');
 var maxRangeInput = document.querySelector('#max-range-input');
 var minRangeValue = document.querySelector('#min-range-value');
 var maxRangeValue = document.querySelector('#max-range-value');
+var updateBtn = document.querySelector('#update-btn');
 
 submitGuessForm.addEventListener('input', checkGuessInputs);
 submitGuessForm.addEventListener('input', enableClearBtn);
 clearFormBtn.addEventListener('click', clearFormInputs);
+updateBtn.addEventListener('click', udpateCurrentGuessRange);
 
 
 function checkGuessInputs(){
@@ -94,3 +96,14 @@ function guessChecker(){
 }
 
 //take a user's value from min/max range input, and put it in the sentence at the top of the guess FORM
+function udpateCurrentGuessRange() {
+  minRangeValue.innerText = minRangeInput.value;
+  maxRangeValue.innerText = maxRangeInput.value;
+
+  clearSetRangeInputs();
+}
+
+function clearSetRangeInputs() {
+  document.getElementById('set-range-inputs').reset();
+  console.log('it works');
+}
