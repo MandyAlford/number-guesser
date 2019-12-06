@@ -64,21 +64,26 @@ function guessChecker(){
   var challenger1Feedback = document.querySelector('#challenger-1-feedback');
   var challenger2Feedback = document.querySelector('#challenger-2-feedback');
 
+  var highFeedback = ["that's too high!", "that's way too high", "too high!"];
+  var lowFeedback= ["that's too low!", "that's way too low!", "too low!"];
+  var index1= Math.floor(Math.random() * highFeedback.length);
+  var index2= Math.floor(Math.random() * lowFeedback.length);
+
   var num1= parseInt(challenger1Guess.value);
   var num2= parseInt(challenger2Guess.value);
 
   if (num1 < targetNum){
-    challenger1Feedback.innerText= "that's too low!";
+    challenger1Feedback.innerText= lowFeedback[index2];
   } else if (num1 > targetNum){
-    challenger1Feedback.innerText= "that's too high!";
+    challenger1Feedback.innerText= highFeedback[index1];
   } else {
     challenger1Feedback.innerText= "BOOM!";
   }
 
   if (num2 < targetNum){
-    challenger2Feedback.innerText= "that's too low!";
+    challenger2Feedback.innerText= lowFeedback[index2];
   } else if (num2 > targetNum){
-    challenger2Feedback.innerText= "that's too high!";
+    challenger2Feedback.innerText= highFeedback[index1];
   } else {
     challenger2Feedback.innerText= "BOOM!";
   }
