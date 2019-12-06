@@ -48,12 +48,38 @@ function populateLatestGuess(){
   challenger1GuessSlot.innerText= challenger1Guess.value;
   challenger2GuessSlot.innerText= challenger2Guess.value;
 
-  clearFormInputs();
   disableAllSubmitGuessBtns();
+  guessChecker();
+  clearFormInputs();
 }
 
 function disableAllSubmitGuessBtns() {
   submitBtn.disabled = true;
   clearFormBtn.disabled = true;
   resetGameBtn.disabled = true;
+}
+
+function guessChecker(){
+  var targetNum = 15;
+  var challenger1Feedback = document.querySelector('#challenger-1-feedback');
+  var challenger2Feedback = document.querySelector('#challenger-2-feedback');
+
+  var num1= parseInt(challenger1Guess.value);
+  var num2= parseInt(challenger2Guess.value);
+
+  if (num1 < targetNum){
+    challenger1Feedback.innerText= "that's too low!";
+  } else if (num1 > targetNum){
+    challenger1Feedback.innerText= "that's too high!";
+  } else {
+    challenger1Feedback.innerText= "BOOM!";
+  }
+
+  if (num2 < targetNum){
+    challenger2Feedback.innerText= "that's too low!";
+  } else if (num2 > targetNum){
+    challenger2Feedback.innerText= "that's too high!";
+  } else {
+    challenger2Feedback.innerText= "BOOM!";
+  }
 }
