@@ -66,7 +66,10 @@ function disableAllSubmitGuessBtns() {
 }
 
 function guessChecker(){
-  var targetNum = 15;
+  var min = parseInt(`${minRangeValue.innerText}`)
+  var max = parseInt(`${maxRangeValue.innerText}`);
+  var targetNum = Math.floor(Math.random() * (max - min + 1)) + min;
+
   var challenger1Feedback = document.querySelector('#challenger-1-feedback');
   var challenger2Feedback = document.querySelector('#challenger-2-feedback');
 
@@ -95,7 +98,6 @@ function guessChecker(){
   }
 }
 
-//take a user's value from min/max range input, and put it in the sentence at the top of the guess FORM
 function udpateCurrentGuessRange() {
   minRangeValue.innerText = minRangeInput.value;
   maxRangeValue.innerText = maxRangeInput.value;
@@ -105,5 +107,4 @@ function udpateCurrentGuessRange() {
 
 function clearSetRangeInputs() {
   document.getElementById('set-range-inputs').reset();
-  console.log('it works');
 }
