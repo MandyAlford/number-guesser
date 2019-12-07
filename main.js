@@ -7,10 +7,16 @@ var challenger1Guess = document.querySelector('#challenger-1-guess-input');
 var challenger2Name = document.querySelector('#challenger-2-name-input');
 var challenger2Guess = document.querySelector('#challenger-2-guess-input');
 var resetGameBtn = document.querySelector('#reset-game-btn');
+var minRangeInput = document.querySelector('#min-range-input');
+var maxRangeInput = document.querySelector('#max-range-input');
+var minRangeValue = document.querySelector('#min-range-value');
+var maxRangeValue = document.querySelector('#max-range-value');
+var updateBtn = document.querySelector('#update-btn');
 
 submitGuessForm.addEventListener('input', checkGuessInputs);
 submitGuessForm.addEventListener('input', enableClearBtn);
 clearFormBtn.addEventListener('click', clearFormInputs);
+updateBtn.addEventListener('click', udpateCurrentGuessRange);
 
 
 function checkGuessInputs(){
@@ -60,7 +66,10 @@ function disableAllSubmitGuessBtns() {
 }
 
 function guessChecker(){
-  var targetNum = 15;
+  var min = parseInt(`${minRangeValue.innerText}`)
+  var max = parseInt(`${maxRangeValue.innerText}`);
+  var targetNum = Math.floor(Math.random() * (max - min + 1)) + min;
+
   var challenger1Feedback = document.querySelector('#challenger-1-feedback');
   var challenger2Feedback = document.querySelector('#challenger-2-feedback');
 
@@ -87,4 +96,15 @@ function guessChecker(){
   } else {
     challenger2Feedback.innerText= "BOOM!";
   }
+}
+
+function udpateCurrentGuessRange() {
+  minRangeValue.innerText = minRangeInput.value;
+  maxRangeValue.innerText = maxRangeInput.value;
+
+  clearSetRangeInputs();
+}
+
+function clearSetRangeInputs() {
+  document.getElementById('set-range-inputs').reset();
 }

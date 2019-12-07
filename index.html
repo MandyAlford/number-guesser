@@ -16,26 +16,26 @@
     <main>
       <section class="left-section">
         <section class="set-range">
-          <form>
+          <form id="set-range-inputs">
             <h3>Set Range</h3>
             <section class="set-range-inputs">
               <div>
                 <label>Min Range</label>
-                <input>
+                <input id="min-range-input">
               </div>
               <div>
                 <label>Max Range</label>
-                <input>
+                <input id="max-range-input">
               </div>
               <div>
-                <button type="button">UPDATE</button>
+                <button id="update-btn" type="button">UPDATE</button>
               </div>
              </section>
           </form>
         </section>
         <section class="submit-guess">
           <form id="submit-guess-form">
-            <p>The Current Range is <span>1</span> to <span>100</span></p>
+            <p>The Current Range is <span id="min-range-value">1</span> to <span id="max-range-value">100</span></p>
             <h3>Challenger 1</h3>
             <section class="submit-guess-inputs-challenger-1">
               <div>
