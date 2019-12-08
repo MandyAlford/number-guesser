@@ -54,7 +54,9 @@ function populateLatestGuess(){
   challenger1NameSlot.innerText= challenger1Name.value;
   challenger2NameSlot.innerText= challenger2Name.value;
   challenger1GuessSlot.innerText= challenger1Guess.value;
+  challenger1GuessSlot.classList.add('pink-text');
   challenger2GuessSlot.innerText= challenger2Guess.value;
+  challenger2GuessSlot.classList.add('pink-text');
 
 
   // disableAllSubmitGuessBtns();
@@ -72,6 +74,7 @@ function generateTargetNum(){
   var min = parseInt(`${minRangeValue.innerText}`)
   var max = parseInt(`${maxRangeValue.innerText}`);
   targetNum = Math.floor(Math.random() * (max - min + 1)) + min;
+  console.log({targetNum});
 }
 
 function guessChecker(){
