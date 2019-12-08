@@ -74,15 +74,14 @@ function generateTargetNum(){
   var min = parseInt(`${minRangeValue.innerText}`)
   var max = parseInt(`${maxRangeValue.innerText}`);
   targetNum = Math.floor(Math.random() * (max - min + 1)) + min;
-  console.log({targetNum});
 }
 
 function guessChecker(){
   var challenger1Feedback = document.querySelector('#challenger-1-feedback');
   var challenger2Feedback = document.querySelector('#challenger-2-feedback');
 
-  var highFeedback = ["that's too high!", "that's way too high", "too high!"];
-  var lowFeedback= ["that's too low!", "that's way too low!", "too low!"];
+  var highFeedback = ["that's too high!", "guess lower!", "too high!", "go lower!", "not low enough!"];
+  var lowFeedback= ["that's too low!", "guess higher!", "too low!", "go higher!", "not high enough!"];
   var index1= Math.floor(Math.random() * highFeedback.length);
   var index2= Math.floor(Math.random() * lowFeedback.length);
 
