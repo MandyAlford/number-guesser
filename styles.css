@@ -231,6 +231,7 @@ hr {
 
 .winner-card span {
   font-weight: bold;
+  text-transform: uppercase;
 }
 
 .winner-card section{
@@ -248,11 +249,6 @@ hr {
 
 .game-stats{
   justify-content: space-between;
-
-}
-
-.game-stats p{
-
 }
 
 .vs{
@@ -270,10 +266,6 @@ hr {
   line-height: 1em;
   padding-top: 4%;
   text-align: center;
-}
-
-.winner-declaration p:first-child{
-  font-weight: bold;
 }
 
 .winner-card img {
