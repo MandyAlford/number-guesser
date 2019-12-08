@@ -103,8 +103,31 @@ function udpateCurrentGuessRange() {
   maxRangeValue.innerText = maxRangeInput.value;
 
   clearSetRangeInputs();
+  displayWinnerCard();
 }
 
 function clearSetRangeInputs() {
   document.getElementById('set-range-inputs').reset();
+}
+
+function displayWinnerCard(){
+  var rightSection= document.querySelector('.right-section');
+
+  rightSection.innerHTML+= `
+  <section class="winner-card">
+      <section class="vs">
+        <p><span>CHALLENGER 1 NAME</span></p>
+        <p>VS</p>
+        <p><span>CHALLENGER 2 NAME</span></p>
+      </section>
+      <section class="winner-declaration">
+      <p>CHALLENGER 2 NAME</p>
+      <p>WINNER</p>
+      </section>
+      <section class="game-stats">
+        <p><span>47</span> GUESSES</p>
+        <p><span>1</span> MINUTE <span>35</span> SECONDS</p>
+        <img src="assets/delete.svg" alt="close-icon">
+      </section>
+    </section>`
 }
