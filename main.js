@@ -12,6 +12,8 @@ var maxRangeInput = document.querySelector('#max-range-input');
 var minRangeValue = document.querySelector('#min-range-value');
 var maxRangeValue = document.querySelector('#max-range-value');
 var updateBtn = document.querySelector('#update-btn');
+var gameWinner
+var targetNum
 
 submitGuessForm.addEventListener('input', checkGuessInputs);
 submitGuessForm.addEventListener('input', enableClearBtn);
@@ -54,7 +56,8 @@ function populateLatestGuess(){
   challenger1GuessSlot.innerText= challenger1Guess.value;
   challenger2GuessSlot.innerText= challenger2Guess.value;
 
-  disableAllSubmitGuessBtns();
+
+  // disableAllSubmitGuessBtns();
   guessChecker();
   clearFormInputs();
 }
@@ -65,11 +68,13 @@ function disableAllSubmitGuessBtns() {
   resetGameBtn.disabled = true;
 }
 
-function guessChecker(){
+function generateTargetNum(){
   var min = parseInt(`${minRangeValue.innerText}`)
   var max = parseInt(`${maxRangeValue.innerText}`);
-  var targetNum = Math.floor(Math.random() * (max - min + 1)) + min;
+  targetNum = Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
+function guessChecker(){
   var challenger1Feedback = document.querySelector('#challenger-1-feedback');
   var challenger2Feedback = document.querySelector('#challenger-2-feedback');
 
@@ -87,6 +92,8 @@ function guessChecker(){
     challenger1Feedback.innerText= highFeedback[index1];
   } else {
     challenger1Feedback.innerText= "BOOM!";
+    gameWinner= challenger1Name.value;
+    displayWinnerCard();
   }
 
   if (num2 < targetNum){
@@ -95,15 +102,16 @@ function guessChecker(){
     challenger2Feedback.innerText= highFeedback[index1];
   } else {
     challenger2Feedback.innerText= "BOOM!";
+    gameWinner= challenger2Name.value;
+    displayWinnerCard();
   }
 }
 
 function udpateCurrentGuessRange() {
   minRangeValue.innerText = minRangeInput.value;
   maxRangeValue.innerText = maxRangeInput.value;
-
+  generateTargetNum();
   clearSetRangeInputs();
-  displayWinnerCard();
 }
 
 function clearSetRangeInputs() {
@@ -116,12 +124,12 @@ function displayWinnerCard(){
   rightSection.innerHTML+= `
   <section class="winner-card">
       <section class="vs">
-        <p><span>CHALLENGER 1 NAME</span></p>
+        <p><span>${challenger1Name.value}</span></p>
         <p>VS</p>
-        <p><span>CHALLENGER 2 NAME</span></p>
+        <p><span>${challenger2Name.value}</span></p>
       </section>
       <section class="winner-declaration">
-      <p>CHALLENGER 2 NAME</p>
+      <p><span>${gameWinner}</span></p>
       <p>WINNER</p>
       </section>
       <section class="game-stats">
