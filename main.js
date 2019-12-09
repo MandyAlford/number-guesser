@@ -22,11 +22,12 @@ var gameWinner
 var targetNum
 var guessCounter= 0;
 var rightSection= document.querySelector('.right-section');
+var errorMessage= document.querySelector('#warning');
 
 submitGuessForm.addEventListener('input', checkGuessInputs);
 submitGuessForm.addEventListener('input', enableClearBtn);
 clearFormBtn.addEventListener('click', clearFormInputs);
-updateBtn.addEventListener('click', udpateCurrentGuessRange);
+updateBtn.addEventListener('click', rangeChecker);
 resetGameBtn.addEventListener('click', resetGuessForm);
 
 rightSection.addEventListener("click", deleteCard);
@@ -181,9 +182,11 @@ function resetTargetNum() {
 }
 
 function rangeChecker(){
-  if (minRangeInput.value < maxRangeInput.value){
+  if (parseInt(minRangeInput.value) < parseInt(maxRangeInput.value)){
+    errorMessage.classList.add("hidden");
     udpateCurrentGuessRange();
   } else {
-    
+    console.log("inside the else");
+    errorMessage.classList.remove("hidden");
   }
 }
