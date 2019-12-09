@@ -133,12 +133,15 @@ hr {
 
 #warning {
   color: #DD1972;
-  flex-direction: row;
+  flex-direction: row !important;
   font-size: .7em;
   padding-top: 1%;
   width: 100%;
 }
 
+.hidden {
+  display: none !important;
+}
 
 .error {
   display: inline-flex;
@@ -300,3 +303,5 @@ hr {
 .pink-text {
   color: #DD1972;
 }
+
+.hidden
