@@ -142,3 +142,14 @@ function displayWinnerCard(){
       </section>
     </section>`);
 }
+
+function resetGuessForm() {
+  //set counter back to zero
+  guessCounter = 0;
+  //clear out innerText displaying Range
+  minRangeValue.innerText = 1;
+  maxRangeValue.innerText = 100;
+  //update targetNum - tricky part
+  targetNum = null;
+
+}
