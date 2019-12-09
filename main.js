@@ -15,12 +15,13 @@ var updateBtn = document.querySelector('#update-btn');
 var gameWinner
 var targetNum
 var guessCounter= 0;
+var rightSection= document.querySelector('.right-section');
 
 submitGuessForm.addEventListener('input', checkGuessInputs);
 submitGuessForm.addEventListener('input', enableClearBtn);
 clearFormBtn.addEventListener('click', clearFormInputs);
 updateBtn.addEventListener('click', udpateCurrentGuessRange);
-
+rightSection.addEventListener("click", deleteCard);
 
 function checkGuessInputs(){
 
@@ -139,7 +140,7 @@ function displayWinnerCard(){
       <section class="game-stats">
         <p><span>${guessCounter}</span> GUESSES</p>
         <p><span>1</span> MINUTE <span>35</span> SECONDS</p>
-        <img src="assets/delete.svg" alt="close-icon">
+        <img src="assets/delete.svg" alt="close-icon" class="close">
       </section>
     </section>`
   clearGuessCounter();
@@ -148,3 +149,9 @@ function displayWinnerCard(){
 function clearGuessCounter(){
   guessCounter=0;
 }
+
+function deleteCard(event) {
+  if (event.target.classList.contains("close")){
+   event.target.parentElement.parentElement.remove();
+   }
+  }
