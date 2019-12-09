@@ -14,6 +14,7 @@ var maxRangeValue = document.querySelector('#max-range-value');
 var updateBtn = document.querySelector('#update-btn');
 var gameWinner
 var targetNum
+var guessCounter= 0;
 
 submitGuessForm.addEventListener('input', checkGuessInputs);
 submitGuessForm.addEventListener('input', enableClearBtn);
@@ -74,6 +75,7 @@ function generateTargetNum(){
   var min = parseInt(`${minRangeValue.innerText}`)
   var max = parseInt(`${maxRangeValue.innerText}`);
   targetNum = Math.floor(Math.random() * (max - min + 1)) + min;
+  console.log(targetNum);
 }
 
 function guessChecker(){
@@ -87,7 +89,7 @@ function guessChecker(){
 
   var num1= parseInt(challenger1Guess.value);
   var num2= parseInt(challenger2Guess.value);
-
+  guessCounter +=2;
   if (num1 < targetNum){
     challenger1Feedback.innerText= lowFeedback[index2];
   } else if (num1 > targetNum){
@@ -135,9 +137,14 @@ function displayWinnerCard(){
       <p>WINNER</p>
       </section>
       <section class="game-stats">
-        <p><span>47</span> GUESSES</p>
+        <p><span>${guessCounter}</span> GUESSES</p>
         <p><span>1</span> MINUTE <span>35</span> SECONDS</p>
         <img src="assets/delete.svg" alt="close-icon">
       </section>
     </section>`
+  clearGuessCounter();
+}
+
+function clearGuessCounter(){
+  guessCounter=0;
 }
