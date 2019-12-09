@@ -23,14 +23,15 @@ var targetNum
 var guessCounter= 0;
 var rightSection= document.querySelector('.right-section');
 var errorMessage= document.querySelector('#warning');
+var setRangeForm= document.querySelector('#set-range-inputs');
 
 submitGuessForm.addEventListener('input', checkGuessInputs);
 submitGuessForm.addEventListener('input', enableClearBtn);
 clearFormBtn.addEventListener('click', clearFormInputs);
-updateBtn.addEventListener('click', rangeChecker);
+// updateBtn.addEventListener('click', displayErrorMessage);
 resetGameBtn.addEventListener('click', resetGuessForm);
-
 rightSection.addEventListener("click", deleteCard);
+setRangeForm.addEventListener('input', checkRangeInputs);
 
 function checkGuessInputs(){
 
@@ -181,12 +182,27 @@ function resetTargetNum() {
   targetNum = NaN;
 }
 
-function rangeChecker(){
+function displayErrorMessage(){
   if (parseInt(minRangeInput.value) < parseInt(maxRangeInput.value)){
     errorMessage.classList.add("hidden");
-    udpateCurrentGuessRange();
+    enableUpdateBtn();
   } else {
     console.log("inside the else");
     errorMessage.classList.remove("hidden");
+    updateBtn.disabled = true;
   }
+}
+
+function checkRangeInputs(){
+  if (minRangeInput.value && maxRangeInput.value){
+    displayErrorMessage();
+  } else {
+  updateBtn.disabled = true;
+  }
+}
+
+function enableUpdateBtn(){
+  updateBtn.disabled = false;
+  console.log('btn is enabled')
+  updateBtn.addEventListener('click', udpateCurrentGuessRange);
 }
