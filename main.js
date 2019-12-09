@@ -156,6 +156,7 @@ function deleteCard(event) {
    event.target.parentElement.parentElement.remove();
    }
   }
+
 function resetGuessForm() {
   minRangeValue.innerText = 1;
   maxRangeValue.innerText = 100;
@@ -177,4 +178,12 @@ function resetGuessForm() {
 
 function resetTargetNum() {
   targetNum = NaN;
+}
+
+function rangeChecker(){
+  if (minRangeInput.value < maxRangeInput.value){
+    udpateCurrentGuessRange();
+  } else {
+    
+  }
 }
