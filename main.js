@@ -187,7 +187,6 @@ function displayErrorMessage(){
     errorMessage.classList.add("hidden");
     enableUpdateBtn();
   } else {
-    console.log("inside the else");
     errorMessage.classList.remove("hidden");
     updateBtn.disabled = true;
   }
@@ -203,6 +202,11 @@ function checkRangeInputs(){
 
 function enableUpdateBtn(){
   updateBtn.disabled = false;
-  console.log('btn is enabled')
   updateBtn.addEventListener('click', udpateCurrentGuessRange);
+}
+
+function checkChallengerGuessRange(){
+  if (parseInt(challenger1Guess.value)>parseInt(minRangeInput.value) && parseInt(challenger1Guess.value)<parseInt(maxRangeInput.value)){
+    console.log('it works');
+  }
 }
