@@ -12,13 +12,14 @@ var maxRangeInput = document.querySelector('#max-range-input');
 var minRangeValue = document.querySelector('#min-range-value');
 var maxRangeValue = document.querySelector('#max-range-value');
 var updateBtn = document.querySelector('#update-btn');
-var gameWinner
-var targetNum
+var gameWinner;
+var targetNum;
 
 submitGuessForm.addEventListener('input', checkGuessInputs);
 submitGuessForm.addEventListener('input', enableClearBtn);
 clearFormBtn.addEventListener('click', clearFormInputs);
 updateBtn.addEventListener('click', udpateCurrentGuessRange);
+resetGameBtn.addEventListener('click', resetGuessForm);
 
 
 function checkGuessInputs(){
@@ -139,5 +140,5 @@ function displayWinnerCard(){
         <p><span>1</span> MINUTE <span>35</span> SECONDS</p>
         <img src="assets/delete.svg" alt="close-icon">
       </section>
-    </section>`); 
+    </section>`);
 }
