@@ -74,7 +74,7 @@ hr {
 }
 
 .set-range {
-  height: 12%;
+  height: 13%;
 }
 
 .set-range h3 {
@@ -129,6 +129,22 @@ hr {
 .submit-guess * {
   height: 45%;
   margin-left: 2%;
+}
+
+#warning {
+  color: #DD1972;
+  flex-direction: row;
+  font-size: .7em;
+  padding-top: 1%;
+  width: 100%;
+}
+
+
+.error {
+  display: inline-flex;
+  height: 20px;
+  margin-right: 7%;
+  width: 20px;
 }
 
 .submit-guess form span {
