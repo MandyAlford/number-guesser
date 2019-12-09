@@ -144,7 +144,7 @@ hr {
 }
 
 .error {
-  display: inline-flex;
+  display: inline;
   height: 20px;
   margin-right: 7%;
   width: 20px;
@@ -192,6 +192,11 @@ hr {
   margin-bottom: 2.5%;
   margin-top: 5%;
   width: 30%;
+}
+
+.guess-error-message{
+  flex-direction: row;
+  width: 100%;
 }
 
 .latest-guess {
@@ -304,4 +309,10 @@ hr {
   color: #DD1972;
 }
 
-.hidden
+.warning {
+  color: #DD1972;
+  display: inline;
+  font-size: .7em;
+  padding-top: 1%;
+  width: 100%;
+}
