@@ -123,7 +123,7 @@ function clearSetRangeInputs() {
 function displayWinnerCard(){
   var rightSection= document.querySelector('.right-section');
 
-  rightSection.innerHTML+= `
+  rightSection.insertAdjacentHTML('afterbegin', `
   <section class="winner-card">
       <section class="vs">
         <p><span>${challenger1Name.value}</span></p>
@@ -139,5 +139,5 @@ function displayWinnerCard(){
         <p><span>1</span> MINUTE <span>35</span> SECONDS</p>
         <img src="assets/delete.svg" alt="close-icon">
       </section>
-    </section>`
+    </section>`); 
 }
