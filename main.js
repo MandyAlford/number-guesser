@@ -12,6 +12,8 @@ var maxRangeInput = document.querySelector('#max-range-input');
 var minRangeValue = document.querySelector('#min-range-value');
 var maxRangeValue = document.querySelector('#max-range-value');
 var updateBtn = document.querySelector('#update-btn');
+var challenger1GuessSlot= document.querySelector('#challenger-1-guess-slot');
+var challenger2GuessSlot= document.querySelector('#challenger-2-guess-slot');
 var gameWinner
 var targetNum
 var guessCounter= 0;
@@ -50,8 +52,7 @@ function clearFormInputs() {
 function populateLatestGuess(){
   var challenger1NameSlot= document.querySelector('#challenger-1-name-slot');
   var challenger2NameSlot= document.querySelector('#challenger-2-name-slot');
-  var challenger1GuessSlot= document.querySelector('#challenger-1-guess-slot');
-  var challenger2GuessSlot= document.querySelector('#challenger-2-guess-slot');
+
 
   challenger1NameSlot.innerText= challenger1Name.value;
   challenger2NameSlot.innerText= challenger2Name.value;
@@ -148,4 +149,11 @@ function displayWinnerCard(){
 
 function clearGuessCounter(){
   guessCounter=0;
+}
+
+function guessFromReset() {
+  //Set range to display back to 1 to 100
+
+  //Remove pink class from text
+  //reset generateTargetNum
 }
