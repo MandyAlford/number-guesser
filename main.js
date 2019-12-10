@@ -22,14 +22,18 @@ var gameWinner
 var targetNum
 var guessCounter= 0;
 var rightSection= document.querySelector('.right-section');
+var errorMessage= document.querySelector('#warning');
+var setRangeForm= document.querySelector('#set-range-inputs');
 
 submitGuessForm.addEventListener('input', checkGuessInputs);
 submitGuessForm.addEventListener('input', enableClearBtn);
 clearFormBtn.addEventListener('click', clearFormInputs);
-updateBtn.addEventListener('click', udpateCurrentGuessRange);
+// updateBtn.addEventListener('click', displayErrorMessage);
 resetGameBtn.addEventListener('click', resetGuessForm);
-
 rightSection.addEventListener("click", deleteCard);
+setRangeForm.addEventListener('input', checkRangeInputs);
+challenger1Guess.addEventListener('input', checkChallengerGuessRange);
+challenger2Guess.addEventListener('input', checkChallengerGuessRange);
 
 function checkGuessInputs(){
 
@@ -156,6 +160,7 @@ function deleteCard(event) {
    event.target.parentElement.parentElement.remove();
    }
   }
+
 function resetGuessForm() {
   minRangeValue.innerText = 1;
   maxRangeValue.innerText = 100;
@@ -177,4 +182,35 @@ function resetGuessForm() {
 
 function resetTargetNum() {
   targetNum = NaN;
+}
+
+function displayErrorMessage(){
+  if (parseInt(minRangeInput.value) < parseInt(maxRangeInput.value)){
+    errorMessage.classList.add("hidden");
+    enableUpdateBtn();
+  } else {
+    errorMessage.classList.remove("hidden");
+    updateBtn.disabled = true;
+  }
+}
+
+function checkRangeInputs(){
+  if (minRangeInput.value && maxRangeInput.value){
+    displayErrorMessage();
+  } else {
+  updateBtn.disabled = true;
+  }
+}
+
+function enableUpdateBtn(){
+  updateBtn.disabled = false;
+  updateBtn.addEventListener('click', udpateCurrentGuessRange);
+}
+
+function checkChallengerGuessRange(event){
+  if (parseInt(event.target.value)>parseInt(minRangeValue.innerText) && parseInt(event.target.value)<parseInt(maxRangeValue.innerText)){
+  event.target.nextElementSibling.classList.add('hidden');
+  } else {
+    event.target.nextElementSibling.classList.remove('hidden');
+  }
 }

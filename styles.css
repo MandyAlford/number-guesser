@@ -74,7 +74,7 @@ hr {
 }
 
 .set-range {
-  height: 12%;
+  height: 13%;
 }
 
 .set-range h3 {
@@ -131,6 +131,21 @@ hr {
   margin-left: 2%;
 }
 
+#warning {
+  color: #DD1972;
+  flex-direction: row !important;
+  font-size: .7em;
+  padding-top: 1%;
+  width: 100%;
+}
+
+.error {
+  display: inline;
+  height: 20px;
+  margin-right: 4%;
+  width: 20px;
+}
+
 .submit-guess form span {
   color: #404041;
   font-weight: 700;
@@ -164,6 +179,12 @@ hr {
   width: 40%;
 }
 
+.submit-guess div:nth-child(3) {
+  display: inline;
+  margin-left: 2%;
+  width: 100%;
+}
+
 .submit-guess input {
   height: 3em;
 }
@@ -173,6 +194,11 @@ hr {
   margin-bottom: 2.5%;
   margin-top: 5%;
   width: 30%;
+}
+
+
+.guess-error-message p {
+  margin-left: -4.5%;
 }
 
 .latest-guess {
@@ -283,4 +309,16 @@ hr {
 
 .pink-text {
   color: #DD1972;
+}
+
+.warning {
+  color: #DD1972;
+  display: inline;
+  font-size: .7em;
+  padding-top: 1%;
+  width: 100%;
+}
+
+.hidden {
+  display: none !important;
 }

@@ -26,6 +26,10 @@
               <div>
                 <label>Max Range</label>
                 <input type="number" id="max-range-input">
+                <div id="warning" class= "warning hidden">
+                  <img src="assets/error-icon.svg" alt="error-icon" class="error">
+                  <p id="max-error">Must be more than min</p>
+              </div>
               </div>
               <div>
                 <button id="update-btn" type="button">UPDATE</button>
@@ -45,6 +49,10 @@
               <div>
                 <label>Guess</label>
                 <input type="number" id="challenger-1-guess-input">
+                <div class="guess-error-message hidden" id="challenger-1-warning">
+                  <img src="assets/error-icon.svg" alt="error-icon" class="error">
+                  <p class="warning">Guess must be inside range</p>
+                </div>
               </div>
             </section>
               <h3>Challenger 2</h3>
@@ -56,6 +64,10 @@
                 <div>
                   <label>Guess</label>
                   <input type="number" id="challenger-2-guess-input">
+                  <div class="guess-error-message hidden" id="challenger-2-warning">
+                    <img src="assets/error-icon.svg" alt="error-icon" class="error">
+                    <p class="warning">Guess must be inside range</p>
+                  </div>
                 </div>
               </section>
             <button id="submit-guess-btn" type="button">SUBMIT GUESS</button>
