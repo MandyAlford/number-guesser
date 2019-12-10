@@ -32,6 +32,8 @@ clearFormBtn.addEventListener('click', clearFormInputs);
 resetGameBtn.addEventListener('click', resetGuessForm);
 rightSection.addEventListener("click", deleteCard);
 setRangeForm.addEventListener('input', checkRangeInputs);
+challenger1Guess.addEventListener('input', checkChallengerGuessRange);
+challenger2Guess.addEventListener('input', checkChallengerGuessRange);
 
 function checkGuessInputs(){
 
@@ -205,8 +207,10 @@ function enableUpdateBtn(){
   updateBtn.addEventListener('click', udpateCurrentGuessRange);
 }
 
-function checkChallengerGuessRange(){
-  if (parseInt(challenger1Guess.value)>parseInt(minRangeInput.value) && parseInt(challenger1Guess.value)<parseInt(maxRangeInput.value)){
-    console.log('it works');
+function checkChallengerGuessRange(event){
+  if (parseInt(event.target.value)>parseInt(minRangeValue.innerText) && parseInt(event.target.value)<parseInt(maxRangeValue.innerText)){
+  event.target.nextElementSibling.classList.add('hidden');
+  } else {
+    event.target.nextElementSibling.classList.remove('hidden');
   }
 }
