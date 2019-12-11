@@ -99,7 +99,8 @@ hr {
 }
 
 .set-range-inputs div button,
-.submit-guess form button {
+.submit-guess form button,
+#clear-all-btn {
   background-color: #d0d2d3;
   border: 0;
   border-radius: 15px;
@@ -244,6 +245,11 @@ hr {
 .right-section {
   background-color: #d0d2d3;
   border-left: solid 1px #666666;
+}
+
+#clear-all-btn {
+  background-color: #404041;
+  font-size: .6em;
 }
 
 .winner-card {
