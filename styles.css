@@ -100,7 +100,7 @@ hr {
 
 .set-range-inputs div button,
 .submit-guess form button,
-#clear-all-btn {
+.clear-all-btn {
   background-color: #d0d2d3;
   border: 0;
   border-radius: 15px;
@@ -247,7 +247,7 @@ hr {
   border-left: solid 1px #666666;
 }
 
-#clear-all-btn {
+.clear-all-btn {
   background-color: #6E6E6E;
   font-size: .6em;
   margin-left: 85%;
