@@ -129,9 +129,9 @@ function clearSetRangeInputs() {
 }
 
 function displayWinnerCard(){
-  var rightSection= document.querySelector('.right-section');
+  var winnerCardsContainer= document.querySelector('.winner-cards-container');
 
-  rightSection.insertAdjacentHTML('afterbegin', `
+  winnerCardsContainer.insertAdjacentHTML('afterbegin', `
   <section class="winner-card">
       <section class="vs">
         <p><span>${challenger1Name.value}</span></p>
