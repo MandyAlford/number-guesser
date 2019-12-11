@@ -24,6 +24,7 @@ var guessCounter= 0;
 var rightSection= document.querySelector('.right-section');
 var errorMessage= document.querySelector('#warning');
 var setRangeForm= document.querySelector('#set-range-inputs');
+var clearAllBtn = document.querySelector('.clear-all-btn');
 
 submitGuessForm.addEventListener('input', checkGuessInputs);
 submitGuessForm.addEventListener('input', enableClearBtn);
@@ -129,9 +130,9 @@ function clearSetRangeInputs() {
 }
 
 function displayWinnerCard(){
-  var rightSection= document.querySelector('.right-section');
+  var winnerCardsContainer= document.querySelector('.winner-cards-container');
 
-  rightSection.insertAdjacentHTML('afterbegin', `
+  winnerCardsContainer.insertAdjacentHTML('afterbegin', `
   <section class="winner-card">
       <section class="vs">
         <p><span>${challenger1Name.value}</span></p>
@@ -149,6 +150,21 @@ function displayWinnerCard(){
       </section>
     </section>`);
   clearGuessCounter();
+  showClearAllBtn()
+}
+
+function showClearAllBtn() {
+  var rightSection = document.querySelector('.right-section')
+  clearAllBtn.classList.remove('hidden');
+  rightSection.addEventListener('click', clearAllWinnerCards);
+}
+
+function clearAllWinnerCards() {
+  var winnerCard = document.querySelectorAll('.winner-card');
+  if (event.target.classList.contains('clear-all-btn')) {
+    event.target.nextElementSibling.remove();
+    clearAllBtn.classList.add('hidden');
+  }
 }
 
 function clearGuessCounter(){
