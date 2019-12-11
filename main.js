@@ -40,19 +40,25 @@ challenger2Guess.addEventListener('input', checkChallengerGuessRange);
 function checkGuessInputs(){
 
   if (challenger1Name.value && challenger1Guess.value && challenger2Name.value && challenger2Guess.value){
-    submitBtn.disabled === false;
+    submitBtn.disabled = false;
+    submitBtn.classList.add('active-btns');
     submitBtn.addEventListener('click', populateLatestGuess);
   } else {
-    submitBtn.disabled=== true;
+    submitBtn.disabled = true;
+    submitBtn.classList.remove('active-btns');
+
   }
 }
 
 function enableClearBtn() {
   if (challenger1Name.value || challenger1Guess.value || challenger2Name.value || challenger2Guess.value){
-    clearFormBtn.disabled === false;
+    clearFormBtn.disabled = false;
+    clearFormBtn.classList.add('active-btns');
 
   } else {
-    clearFormBtn.disabled=== true;
+    clearFormBtn.disabled = true;
+    clearFormBtn.classList.remove('active-btns');
+
   }
 }
 
@@ -209,10 +215,13 @@ function resetTargetNum() {
 function displayErrorMessage(){
   if (parseInt(minRangeInput.value) < parseInt(maxRangeInput.value)){
     errorMessage.classList.add("hidden");
+    maxRangeInput.classList.remove('warning-input');
     enableUpdateBtn();
   } else {
     errorMessage.classList.remove("hidden");
+    maxRangeInput.classList.add('warning-input');
     updateBtn.disabled = true;
+
   }
 }
 
@@ -221,11 +230,15 @@ function checkRangeInputs(){
     displayErrorMessage();
   } else {
   updateBtn.disabled = true;
+  updateBtn.classList.remove('active-btns');
+  console.log('btn disabled');
   }
 }
 
 function enableUpdateBtn(){
   updateBtn.disabled = false;
+  updateBtn.classList.add('active-btns');
+  console.log('btn NOT disabled');
   updateBtn.addEventListener('click', udpateCurrentGuessRange);
 }
 
