@@ -112,7 +112,8 @@ hr {
 }
 
 .set-range-inputs div button:hover,
-.submit-guess form button:hover {
+.submit-guess form button:hover,
+.clear-all-btn {
   background-color: #DD1792;
 }
 
@@ -311,7 +312,7 @@ hr {
 /* ACTIVE STATE FOR BUTTONS */
 
 .active-btns {
-  background-color: #6E6E6E;
+  background-color: #6E6E6E !important;
 }
 /* HIDDEN DISPLAY */
 
