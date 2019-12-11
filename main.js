@@ -18,18 +18,19 @@ var challenger1Feedback = document.querySelector('#challenger-1-feedback');
 var challenger2Feedback = document.querySelector('#challenger-2-feedback');
 var challenger1NameSlot= document.querySelector('#challenger-1-name-slot');
 var challenger2NameSlot= document.querySelector('#challenger-2-name-slot');
-var gameWinner
-var targetNum
 var guessCounter= 0;
 var rightSection= document.querySelector('.right-section');
 var errorMessage= document.querySelector('#warning');
 var setRangeForm= document.querySelector('#set-range-inputs');
 var clearAllBtn = document.querySelector('.clear-all-btn');
 
+var gameWinner
+var targetNum
+var startTime
+
 submitGuessForm.addEventListener('input', checkGuessInputs);
 submitGuessForm.addEventListener('input', enableClearBtn);
 clearFormBtn.addEventListener('click', clearFormInputs);
-// updateBtn.addEventListener('click', displayErrorMessage);
 resetGameBtn.addEventListener('click', resetGuessForm);
 rightSection.addEventListener("click", deleteCard);
 setRangeForm.addEventListener('input', checkRangeInputs);
@@ -104,7 +105,10 @@ function guessChecker(){
   } else {
     challenger1Feedback.innerText= "BOOM!";
     gameWinner= challenger1Name.value;
-    displayWinnerCard();
+    var gameTime= (Date.now()-startTime)/1000;
+    var minutes= Math.floor(gameTime/60);
+    var seconds= Math.floor(gameTime % 60);
+    displayWinnerCard(minutes, seconds);
   }
 
   if (num2 < targetNum){
@@ -114,7 +118,10 @@ function guessChecker(){
   } else {
     challenger2Feedback.innerText= "BOOM!";
     gameWinner= challenger2Name.value;
-    displayWinnerCard();
+    var gameTime= Math.floor((Date.now()-startTime)/1000);
+    var minutes= Math.floor(gameTime/60);
+    var seconds= Math.floor(gameTime % 60);
+    displayWinnerCard(minutes, seconds);
   }
 }
 
@@ -123,13 +130,14 @@ function udpateCurrentGuessRange() {
   maxRangeValue.innerText = maxRangeInput.value;
   generateTargetNum();
   clearSetRangeInputs();
+  setGameStartTime();
 }
 
 function clearSetRangeInputs() {
   document.getElementById('set-range-inputs').reset();
 }
 
-function displayWinnerCard(){
+function displayWinnerCard(minutes, seconds){
   var winnerCardsContainer= document.querySelector('.winner-cards-container');
 
   winnerCardsContainer.insertAdjacentHTML('afterbegin', `
@@ -145,7 +153,7 @@ function displayWinnerCard(){
       </section>
       <section class="game-stats">
         <p><span>${guessCounter}</span> GUESSES</p>
-        <p><span>1</span> MINUTE <span>35</span> SECONDS</p>
+        <p><span>${minutes}</span> MINUTES <span>${seconds}</span> SECONDS</p>
         <img src="assets/delete.svg" alt="close-icon" class="close">
       </section>
     </section>`);
@@ -189,9 +197,7 @@ function resetGuessForm() {
 
   challenger1Feedback.innerText = 'no guesses yet!';
   challenger2Feedback.innerText = 'no guesses yet!';
-  //disable form buttons
-  // disableAllSubmitGuessBtns()
-  //reset generateTargetNum
+
   resetTargetNum();
   console.log({targetNum});
 }
@@ -224,9 +230,13 @@ function enableUpdateBtn(){
 }
 
 function checkChallengerGuessRange(event){
-  if (parseInt(event.target.value)>parseInt(minRangeValue.innerText) && parseInt(event.target.value)<parseInt(maxRangeValue.innerText)){
+  if (parseInt(event.target.value)>=parseInt(minRangeValue.innerText) && parseInt(event.target.value)<=parseInt(maxRangeValue.innerText)){
   event.target.nextElementSibling.classList.add('hidden');
   } else {
     event.target.nextElementSibling.classList.remove('hidden');
   }
+}
+
+function setGameStartTime(){
+  startTime= Date.now();
 }
