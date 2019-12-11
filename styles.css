@@ -105,6 +105,7 @@ hr {
   border: 0;
   border-radius: 15px;
   color: #FFFFFF;
+  cursor: not-allowed;
   font-family: "Open Sans", sans-serif;
   font-size: .9em;
   font-weight: 700;
@@ -313,6 +314,7 @@ hr {
 
 .active-btns {
   background-color: #6E6E6E !important;
+  cursor: pointer;
 }
 /* HIDDEN DISPLAY */
 
