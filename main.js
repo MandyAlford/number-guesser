@@ -149,6 +149,12 @@ function displayWinnerCard(){
       </section>
     </section>`);
   clearGuessCounter();
+  showClearAllBtn()
+}
+
+function showClearAllBtn() {
+  var clearAllBtn = document.querySelector('.clear-all-btn');
+  clearAllBtn.classList.remove('hidden');
 }
 
 function clearGuessCounter(){
