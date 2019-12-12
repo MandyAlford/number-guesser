@@ -52,8 +52,8 @@ hr, h2 {
 }
 
 hr {
-  width: 5%;
   margin-bottom: .5%;
+  width: 5%;
 }
 
 /* INITIAL DISPLAY */
@@ -78,8 +78,8 @@ hr {
 }
 
 .set-range h3 {
-  padding-left: 3%;
   margin-bottom: 0;
+  padding-left: 3%;
 }
 
 .set-range form h3 {
@@ -102,8 +102,8 @@ hr {
 .submit-guess form button,
 .clear-all-btn {
   background-color: #d0d2d3;
-  border: 0;
   border-radius: 15px;
+  border: 0;
   color: #FFFFFF;
   cursor: not-allowed;
   font-family: "Open Sans", sans-serif;
@@ -290,7 +290,6 @@ hr {
 
 .vs {
   justify-content: space-around;
-  /* padding-bottom: 4%; */
 }
 
 .winner-declaration {
@@ -322,6 +321,7 @@ hr {
   background-color: #6E6E6E !important;
   cursor: pointer !important;
 }
+
 /* HIDDEN DISPLAY */
 
 .pink-text {
