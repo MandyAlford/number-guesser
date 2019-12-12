@@ -114,7 +114,7 @@ hr {
 
 .set-range-inputs div button:hover,
 .submit-guess form button:hover,
-.clear-all-btn {
+.clear-all-btn:hover {
   background-color: #DD1792;
 }
 
@@ -310,11 +310,17 @@ hr {
   width: 30px;
 }
 
+.game-stats img {
+  cursor: pointer;
+}
+
 /* ACTIVE STATE FOR BUTTONS */
 
-.active-btns {
+.active-btns,
+#reset-game-btn,
+.clear-all-btn {
   background-color: #6E6E6E !important;
-  cursor: pointer;
+  cursor: pointer !important;
 }
 /* HIDDEN DISPLAY */
 
@@ -328,6 +334,10 @@ hr {
   font-size: .7em;
   padding-top: 1%;
   width: 100%;
+}
+
+.warning-input {
+  border: 3px solid #DD1972;
 }
 
 .hidden {
