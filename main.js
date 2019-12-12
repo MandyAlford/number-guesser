@@ -44,8 +44,9 @@ function checkGuessInputs(){
     submitBtn.classList.add('active-btns');
     submitBtn.addEventListener('click', populateLatestGuess);
   } else {
-    submitBtn.disabled = true;
     submitBtn.classList.remove('active-btns');
+    submitBtn.disabled = true;
+
 
   }
 }
@@ -76,10 +77,12 @@ function populateLatestGuess(){
   challenger2GuessSlot.innerText= challenger2Guess.value;
   challenger2GuessSlot.classList.add('pink-text');
 
-
-  // disableAllSubmitGuessBtns();
   guessChecker();
   clearFormInputs();
+  submitBtn.classList.remove('active-btns');
+  submitBtn.disabled = true;
+  clearFormBtn.classList.remove('active-btns');
+  clearFormBtn.disabled = true;
 }
 
 function disableAllSubmitGuessBtns() {
@@ -92,7 +95,6 @@ function generateTargetNum(){
   var min = parseInt(`${minRangeValue.innerText}`)
   var max = parseInt(`${maxRangeValue.innerText}`);
   targetNum = Math.floor(Math.random() * (max - min + 1)) + min;
-  console.log(targetNum);
 }
 
 function guessChecker(){
@@ -134,6 +136,8 @@ function guessChecker(){
 function udpateCurrentGuessRange() {
   minRangeValue.innerText = minRangeInput.value;
   maxRangeValue.innerText = maxRangeInput.value;
+  updateBtn.classList.remove('active-btns');
+  updateBtn.disabled = true;
   generateTargetNum();
   clearSetRangeInputs();
   setGameStartTime();
@@ -205,7 +209,6 @@ function resetGuessForm() {
   challenger2Feedback.innerText = 'no guesses yet!';
 
   resetTargetNum();
-  console.log({targetNum});
 }
 
 function resetTargetNum() {
@@ -231,14 +234,12 @@ function checkRangeInputs(){
   } else {
   updateBtn.disabled = true;
   updateBtn.classList.remove('active-btns');
-  console.log('btn disabled');
   }
 }
 
 function enableUpdateBtn(){
   updateBtn.disabled = false;
   updateBtn.classList.add('active-btns');
-  console.log('btn NOT disabled');
   updateBtn.addEventListener('click', udpateCurrentGuessRange);
 }
 
